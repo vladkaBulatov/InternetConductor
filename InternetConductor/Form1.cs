@@ -14,13 +14,12 @@ namespace InternetConductor
     public partial class InternetConductor : Form
     {
         List<int> numberOfTabs = new List<int>();
-        
+        int i = 0;
 
 
         public InternetConductor()
         {
             InitializeComponent();
-            
 
         }
 
@@ -32,43 +31,36 @@ namespace InternetConductor
 
         private void Web_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {  
-            tabControl1.SelectedTab.Text = ((WebBrowser)tabControl1.SelectedTab.Controls[0]).DocumentTitle;
+            tabControl1.SelectedTab.Text = ((WebBrowser)tabControl1.SelectedTab.Controls[i]).DocumentTitle;
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i <= numberOfTabs.Count; i++)
+        {   
+            if(toolStripTextBox1.Text != null)
             {
-                if (toolStripTextBox1.Text != null)
-                {
-                    ((WebBrowser)tabControl1.SelectedTab.Controls[numberOfTabs[i + 1]]).Navigate(toolStripTextBox1.Text);
-                }
-                else
-                {
-
-                }
+                NewSearch();
             }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).GoBack();
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).GoBack();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {   
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).Refresh();
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Refresh();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).GoForward();
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).GoForward();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             CreateNewTab();
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).Navigate("https://www.youtube.com/channel/UCVeLEDZfl7h5pdnDoCJfrTA?view_as=subscriber");
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate("https://www.youtube.com/channel/UCVeLEDZfl7h5pdnDoCJfrTA?view_as=subscriber");
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -83,11 +75,6 @@ namespace InternetConductor
                 Application.Exit();
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CreateNewTab()
         {
             WebBrowser web = new WebBrowser();
@@ -98,7 +85,7 @@ namespace InternetConductor
             tabControl1.TabPages.Add("Новая вкладка");
             tabControl1.SelectTab(numberOfTabs.Count);
             tabControl1.SelectedTab.Controls.Add(web);
-            numberOfTabs.Add(+1);
+            numberOfTabs.Add(i+1);
         }
 
         private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
@@ -106,27 +93,32 @@ namespace InternetConductor
             if (e.KeyCode == Keys.Enter)
             {
                 CreateNewTab();
-                ((WebBrowser)tabControl1.SelectedTab.Controls[0]).Navigate(toolStripTextBox1.Text);
+                NewSearch();
                 toolStripTextBox1.Clear();
             }
+        }
+
+        private void NewSearch()
+        {
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate(toolStripTextBox1.Text);
         }
 
         private void goolgToolStripMenuItem_Click(object sender, EventArgs e)
         {  
             CreateNewTab();
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).Navigate("https://www.googl.com");
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate("www.googl.com");
         }
 
         private void yandexToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateNewTab();
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).Navigate("https://www.yandex.ru");
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate("www.yandex.ru");
         }
 
         private void mailToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateNewTab();
-            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).Navigate("https://www.mail.ru");
+            ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate("www.mail.ru");
         }
     }
 }
