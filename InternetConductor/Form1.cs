@@ -38,7 +38,7 @@ namespace InternetConductor
         {   
             if(toolStripTextBox1.Text != null)
             {
-                NewSearch();
+                NavigateToPage();
             }
         }
 
@@ -88,17 +88,7 @@ namespace InternetConductor
             numberOfTabs.Add(i+1);
         }
 
-        private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CreateNewTab();
-                NewSearch();
-                toolStripTextBox1.Clear();
-            }
-        }
-
-        private void NewSearch()
+        private void NavigateToPage()
         {
             ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate(toolStripTextBox1.Text);
         }
@@ -120,5 +110,18 @@ namespace InternetConductor
             CreateNewTab();
             ((WebBrowser)tabControl1.SelectedTab.Controls[i]).Navigate("www.mail.ru");
         }
+
+        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)ConsoleKey.Enter)
+            {
+                CreateNewTab();
+                //NavigateToPage();
+                toolStripButton5_Click(null, null);
+                toolStripTextBox1.Clear();
+                
+            }
+        }
+      
     }
 }

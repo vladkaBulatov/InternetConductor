@@ -1,0 +1,9 @@
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\bin\Debug\InternetConductor.exe.config
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\bin\Debug\InternetConductor.exe
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\bin\Debug\InternetConductor.pdb
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\obj\Debug\InternetConductor.csprojResolveAssemblyReference.cache
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\obj\Debug\InternetConductor.InternetConductor.resources
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\obj\Debug\InternetConductor.Properties.Resources.resources
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\obj\Debug\InternetConductor.csproj.GenerateResource.Cache
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\obj\Debug\InternetConductor.exe
+c:\users\vladk.desktop-meq9aes\Documents\Projects\InternetConductor\InternetConductor\obj\Debug\InternetConductor.pdb
